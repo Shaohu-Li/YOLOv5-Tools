@@ -47,8 +47,11 @@ ln Images/*.jpg ../crowdhuman-$1/
 
 echo "** Generate yolo txt files"
 cd ..
+# 产生 train.txt 和 val.txt
 ${PYTHON} gen_txts.py $1
 
 popd > /dev/null
+# 按照 coco 数据集的格式划分
+${PYTHON} gen_coco_stru.py $1
 
 echo "** Done."
