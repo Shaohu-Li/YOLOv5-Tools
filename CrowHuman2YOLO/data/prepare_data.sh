@@ -51,7 +51,5 @@ cd ..
 ${PYTHON} gen_txts.py $1
 
 popd > /dev/null
-# 按照 coco 数据集的格式划分
-${PYTHON} gen_coco_stru.py $1
 
 echo "** Done."
